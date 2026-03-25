@@ -4,16 +4,43 @@
 #Giovanne Dias - RM: 569750
 
 #Entrada de dados.
-severidade_do_problema = int(input("Dígite a severidade do problema (1 a 3): "))
-quantidade_de_horas = int(input("Digíte a quantas horas o chamado está em aberto: "))
-usuarios_afetados = int(input("Digíte a quantidade de usuários afetados pelo prbloema: "))
-ambiente = input("Digite o ambiente (produção ou teste): ").lower()
+#Severidade
+try:
+    severidade_do_problema = int(input("Dígite a severidade do problema (1 a 3): "))
+except ValueError:
+    print("Erro: você deve digitar um número!!")
+if severidade_do_problema < 1 or severidade_do_problema > 3:
+    print("Erro: severidade inválida!!")
+    exit()
+
+#Horas
+try:
+    quantidade_de_horas = int(input("Digíte a quantas horas o chamado está em aberto: "))
+except ValueError:
+    print("Erro: você deve digitar um número!!")
+if quantidade_de_horas < 0:
+    print("Erro: Horas não podem ser negativas!!")
+
+#Usuários afetados
+try:
+    usuarios_afetados = int(input("Digíte a quantidade de usuários afetados pelo prbloema: "))
+except ValueError:
+    print("Erro: você deve digitar um número!!")
+if usuarios_afetados < 0:
+    print("Erro: número de usuários inválido!!")
+    exit()
+
+#Ambiente
+    ambiente = input("Digite o ambiente (produção ou teste): ").lower()
+if ambiente not in ["produção", "teste"]:
+    print("Erro: ambiente inválido ")
+    exit()
+
 
 #Validação dos dados
 if severidade_do_problema < 1 or severidade_do_problema > 3:
     print("Erro: severidade inválida!!")
-elif ambiente not in ["produção", "teste"]:
-    print("Erro: ambiente inválido ")
+
 
 #Classificação de prioridades.
 if severidade_do_problema == 3 and ambiente == "produção":
