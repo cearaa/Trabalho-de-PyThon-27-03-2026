@@ -13,7 +13,7 @@ ambiente = input("Digite o ambiente (produção ou teste): ").lower()
 if severidade_do_problema < 1 or severidade_do_problema > 3:
     print("Erro: severidade inválida!!")
 elif ambiente not in ["produção", "teste"]:
-    print("Erro: ambiente inválido")
+    print("Erro: ambiente inválido ")
 
 #Classificação de prioridades.
 if severidade_do_problema == 3 and ambiente == "produção":
