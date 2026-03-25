@@ -9,6 +9,12 @@ quantidade_de_horas = int(input("Digíte a quantas horas o chamado está em aber
 usuarios_afetados = int(input("Digíte a quantidade de usuários afetados pelo prbloema: "))
 ambiente = input("Digite o ambiente (produção ou teste): ").lower()
 
+#Validação dos dados
+if severidade_do_problema < 1 or severidade_do_problema > 3:
+    print("Erro: severidade inválida!!")
+elif ambiente not in ["produção", "teste"]:
+    print("Erro: ambiente inválido")
+
 #Classificação de prioridades.
 if severidade_do_problema == 3 and ambiente == "produção":
     prioridade = "Crítica"
