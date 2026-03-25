@@ -11,13 +11,13 @@ ambiente = input("Digite o ambiente (produção ou teste): ").lower()
 
 #Classificação de prioridades.
 if severidade_do_problema == 3 and ambiente == "produção":
-    prioridade = "Prioridade Crítica"
+    prioridade = "Crítica"
 elif severidade_do_problema == 3 and usuarios_afetados > 100:
-    prioridade = "Prioridade Alta"
+    prioridade = "Alta"
 elif severidade_do_problema == 2 and quantidade_de_horas > 4:
-    prioridade = "Prioridade Média"
+    prioridade = "Média"
 else:
-    prioridade = "Prioridade Baixa"
+    prioridade = "Baixa"
 
 #O que fazer baseado na prioridade.
 if prioridade == "Crítica":
@@ -30,6 +30,6 @@ else:
     acao = "Colocar na fila de atendimento."
 
 #Saída de Dados.
-print("/n----Resultado----")
+print("\n----Resultado----")
 print(f"Prioridade: {prioridade}")
 print(f"Ação Recomendada: {acao}")
