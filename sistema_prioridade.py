@@ -30,3 +30,6 @@ else:
     acao = "Colocar na fila de atendimento."
 
 #Saída de Dados.
+print("/n----Resultado----")
+print(f"Prioridade: {prioridade}")
+print(f"Ação Recomendada: {acao}")
