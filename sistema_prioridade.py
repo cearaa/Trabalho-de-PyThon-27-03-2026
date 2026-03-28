@@ -6,11 +6,11 @@
 #Entrada de dados.
 severidade_do_problema = int(input("Dígite a severidade do problema (1 a 3): "))
 quantidade_de_horas = int(input("Digíte a quantas horas o chamado está em aberto: "))
-usuarios_afetados = int(input("Digíte a quantidade de usuários afetados pelo prbloema: "))
+usuarios_afetados = int(input("Digíte a quantidade de usuários afetados pelo problema: "))
 ambiente = input("Digite o ambiente (produção ou teste): ").lower()
 
 #Classificação de prioridades.
-if severidade_do_problema == 3 and ambiente == "produção":
+if severidade_do_problema == 3 and (ambiente == "produção"  or ambiente == "producao"):
     prioridade = "Crítica"
 elif severidade_do_problema == 3 or usuarios_afetados > 100:
     prioridade = "Alta"
@@ -25,7 +25,7 @@ if prioridade == "Crítica":
 elif prioridade == "Alta":
     acao = "Iremos te encaminhar para a equipe responsável."
 elif prioridade == "Média":
-    acao = "Se regristre e acompanhe."
+    acao = "Se registre e acompanhe."
 else:
     acao = "Colocar na fila de atendimento."
 
